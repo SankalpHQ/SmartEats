@@ -9,9 +9,11 @@ SmartEats enhances cafeteria management by bringing efficiency and convenience t
 It minimizes manual work, reduces order errors, and encourages a faster service cycle.
 With SmartEats, the entire food ordering experience becomes faster, smarter, and more organized.
 
-![First](images/First.Png)
+![FIrst](images/FIrst.png)
+![Menu](images/Menu.png)
+![Third](images/Third.png)
 
-✨ **Features**
+✨**Features**
 
 📋 Digital Menu: View all available items with prices and descriptions.
 
