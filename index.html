@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartEats - The Future of Cafeteria Ordering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(26, 32, 44, 0.8), rgba(26, 32, 44, 0.8)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+        .toast-notification { animation: toastIn 0.3s ease-in-out, toastOut 0.5s ease-in-out 2.5s forwards; }
+        @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes toastOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(20px); } }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B00',
+                        'primary-dark': '#E65A00',
+                        secondary: '#1A202C',
+                        light: '#F7FAFC',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-secondary">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                 <svg class="w-10 h-10 text-primary" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 59.5C40.5604 59.5 47.5 52.5604 47.5 44C47.5 35.4396 40.5604 28.5 32 28.5C23.4396 28.5 16.5 35.4396 16.5 44C16.5 52.5604 23.4396 59.5 32 59.5Z" stroke="currentColor" stroke-width="5" stroke-miterlimit="10"/>
+                    <path d="M24 28.5V7C24 5.34315 25.3431 4 27 4H37C38.6569 4 40 5.34315 40 7V28.5" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M28 4V14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M36 4V14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <span class="text-2xl font-bold">SmartEats</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#how-it-works" class="font-semibold hover:text-primary transition-colors">How It Works</a>
+                <a href="#menu" class="font-semibold hover:text-primary transition-colors">Menu</a>
+                <a href="#features" class="font-semibold hover:text-primary transition-colors">Features</a>
+            </nav>
+            <a href="#download" class="hidden md:block bg-primary text-white font-bold py-2 px-5 rounded-lg hover:bg-primary-dark transition-colors">Get the App</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-bg text-white py-32 md:py-48">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight fade-in" style="animation-delay: 0.2s;">Skip the Queue, Not Your Meal.</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto fade-in" style="animation-delay: 0.4s;">The smart way to order food at your college cafeteria. Browse, pay, and pick up—all from your phone.</p>
+                <a href="#menu" class="mt-8 inline-block bg-gradient-to-r from-primary to-orange-400 text-white font-bold py-4 px-10 rounded-lg text-lg hover:shadow-xl transition-all transform hover:scale-105 fade-in" style="animation-delay: 0.6s;">
+                    Explore Menu
+                </a>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">How It Works</h2>
+                    <p class="mt-2 text-gray-600">Get your food in 3 simple steps.</p>
+                </div>
+                <div class="mt-12 grid md:grid-cols-3 gap-10 md:gap-16 text-center">
+                    <div class="fade-in" style="animation-delay: 0.2s;">
+                        <div class="flex items-center justify-center h-24 w-24 mx-auto bg-primary-light text-primary rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold">1. Browse & Choose</h3>
+                        <p class="mt-2 text-gray-600">Explore the daily menu with real photos and prices right on your phone.</p>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.4s;">
+                        <div class="flex items-center justify-center h-24 w-24 mx-auto bg-primary-light text-primary rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold">2. Order & Pay Online</h3>
+                        <p class="mt-2 text-gray-600">Add items to your cart and pay securely using UPI, cards, or net banking.</p>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.6s;">
+                        <div class="flex items-center justify-center h-24 w-24 mx-auto bg-primary-light text-primary rounded-full">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.085a2 2 0 00-1.736.97l-2.7 5.4z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold">3. Pick Up & Enjoy</h3>
+                        <p class="mt-2 text-gray-600">Get a notification when your order is ready. Skip the line and grab your meal!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">Today's Menu</h2>
+                    <p class="mt-2 text-gray-600">Freshly prepared, just for you.</p>
+                </div>
+                <div class="mt-8 md:flex justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="relative w-full md:w-1/2 lg:w-1/3">
+                        <input type="text" id="search-input" onkeyup="renderMenu()" placeholder="Search for an item..." class="w-full bg-white border-2 border-gray-200 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:border-primary transition-colors">
+                        <svg class="w-6 h-6 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div id="category-filters" class="flex space-x-2 overflow-x-auto pb-2">
+                        <!-- Filters will be rendered here by JS -->
+                    </div>
+                </div>
+                <div id="menu-grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Menu items will be rendered here by JS -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">More Than Just Ordering</h2>
+                    <p class="mt-2 text-gray-600">Packed with features to make your life easier.</p>
+                </div>
+                <div class="mt-12 grid md:grid-cols-3 gap-10 md:gap-16">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-primary-light text-primary rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Real-Time Tracking</h3>
+                            <p class="mt-1 text-gray-600">Know exactly when your order is received, being prepared, and ready for pickup.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-primary-light text-primary rounded-lg">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Secure Payments</h3>
+                            <p class="mt-1 text-gray-600">Pay with your preferred method. We support UPI, all major cards, and wallets.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-primary-light text-primary rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5V4H4zm0 9h5v5H4v-5zm9-9h5v5h-5V4zm0 9h5v5h-5v-5z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Order History & Reorder</h3>
+                            <p class="mt-1 text-gray-600">Easily view your past orders and re-order your favorites with a single tap.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download CTA Section -->
+        <section id="download" class="hero-bg py-20">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">Get SmartEats Now!</h2>
+                 <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Download the app and transform your cafeteria experience today.</p>
+                 <div class="mt-8 flex justify-center space-x-4">
+                    <a href="#" class="bg-black text-white rounded-lg px-6 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors">
+                        <div><p class="text-xs">Download on the</p><p class="text-lg font-semibold">App Store</p></div>
+                    </a>
+                    <a href="#" class="bg-black text-white rounded-lg px-6 py-3 flex items-center space-x-3 hover:bg-gray-800 transition-colors">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Logo" class="w-24 h-auto">
+                    </a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 SmartEats. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50"></div>
+
+    <script>
+        // --- DATA ---
+        const menuItems = [
+            { id: 1, name: 'Chole Bhature', price: 120, category: 'Lunch', image: 'https://tse4.mm.bing.net/th/id/OIP.kTGRpPyhDe-DkT-PqkWNSAHaLH?pid=Api&P=0&h=180' },
+            { id: 2, name: 'Masala Dosa', price: 90, category: 'Breakfast', image: 'https://tse3.mm.bing.net/th/id/OIP.rjPWdpnilxr1aLeTyTlGLgHaLG?pid=Api&P=0&h=180' },
+            { id: 4, name: 'Veggie Burger', price: 85, category: 'Snacks', image: 'https://tse1.mm.bing.net/th/id/OIP.eSYtySJyuRPrbGYvZQxj-gHaKB?pid=Api&P=0&h=180' },
+            { id: 6, name: 'Cold Coffee', price: 70, category: 'Beverages', image: 'https://tse3.mm.bing.net/th/id/OIP.cTc4_DNWyiy3Ani_6Y6suQHaKe?pid=Api&P=0&h=180' },
+            { id: 8, name: 'Iced Tea', price: 60, category: 'Beverages', image: 'https://tse3.mm.bing.net/th/id/OIP.iP8FHdkpOEp-HWZyfQd6VQHaLH?pid=Api&P=0&h=180' },
+            { id: 3, name: 'Chicken Biryani', price: 180, category: 'Lunch', image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800&auto=format&fit=crop' },
+        ];
+
+        let activeCategory = 'All';
+
+        // --- DOM ELEMENTS ---
+        const menuGrid = document.getElementById('menu-grid');
+        const categoryFiltersContainer = document.getElementById('category-filters');
+        const searchInput = document.getElementById('search-input');
+        const toastContainer = document.getElementById('toast-container');
+
+        // --- FUNCTIONS ---
+        function renderMenu() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredItems = menuItems.filter(item => {
+                const inCategory = activeCategory === 'All' || item.category === activeCategory;
+                const matchesSearch = item.name.toLowerCase().includes(searchTerm);
+                return inCategory && matchesSearch;
+            });
+
+            menuGrid.innerHTML = filteredItems.map(item => `
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <img class="w-full h-48 object-cover" src="${item.image}" alt="${item.name}">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold">${item.name}</h3>
+                        <div class="flex justify-between items-center mt-3">
+                            <p class="text-xl font-black text-gray-900">₹${item.price}</p>
+                            <button onclick="showToast('${item.name} added to cart')" class="bg-primary-light text-primary font-bold py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                ADD
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCategoryFilters() {
+            const categories = ['All', ...new Set(menuItems.map(item => item.category))];
+            categoryFiltersContainer.innerHTML = categories.map(cat => `
+                <button onclick="handleFilterClick('${cat}', this)" class="whitespace-nowrap px-5 py-2 rounded-lg text-sm font-semibold ${activeCategory === cat ? 'bg-secondary text-white' : 'bg-white text-gray-600 shadow-sm'} transition-colors">
+                    ${cat}
+                </button>
+            `).join('');
+        }
+
+        function handleFilterClick(category, element) {
+            activeCategory = category;
+            document.querySelectorAll('#category-filters button').forEach(btn => {
+                btn.classList.remove('bg-secondary', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-600', 'shadow-sm');
+            });
+            element.classList.add('bg-secondary', 'text-white');
+            element.classList.remove('bg-white', 'text-gray-600', 'shadow-sm');
+            renderMenu();
+        }
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification bg-secondary text-white text-sm font-semibold py-2 px-4 rounded-full shadow-lg';
+            toast.innerText = message;
+            toastContainer.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategoryFilters();
+            renderMenu();
+        });
+    </script>
+</body>
+</html>
+
